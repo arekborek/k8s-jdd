@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: hello-jdd-v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: hello-jdd-v1
+      labels:
+        app: hello-jdd-v1
+        env: jdd
+        tier: backend
+        version: v1
+        visualize: "true"
+    spec:
+      containers:
+      - name: hello-jdd
+        image: "gcr.io/strong-art-145220/hello-jdd:v1"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

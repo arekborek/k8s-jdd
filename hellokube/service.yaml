@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    env: jdd
+    visualize: "true"
+  name: hello-jdd
+spec:
+  ports:
+    - port: 8080 # The port that this service should serve on.
+  selector: # Label keys and values that must match in order to receive traffic for this service.
+    env: jdd
+    tier: backend
+  type: LoadBalancer

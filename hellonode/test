@@ -1,0 +1,2 @@
+#/bin/zsh
+for ((;;)) do curl http://localhost:8080; printf '\n'; sleep 1; done

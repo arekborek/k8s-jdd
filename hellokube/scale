@@ -1,0 +1,1 @@
+kubectl scale rc hello-jdd --replicas=2
